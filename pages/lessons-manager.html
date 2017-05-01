@@ -1,0 +1,84 @@
+<style type="text/css">
+.view form table
+{
+  width: 100%;
+}
+.view form .datagrid
+{
+    height: -webkit-calc(100% - 258px);
+    height: -moz-calc(100% - 258px);
+    height: calc(100% - 258px);
+}
+</style>
+
+<p>
+    GERENCIAMENTO DE CONTEÚDOS_<span>&#10006;</span>
+</p>
+
+<form method="post" action="libs/methods/lessons-methods/insert-lesson.php" enctype="multipart/form-data" ng-controller="lessons-controller">
+    <table>
+      <tr>
+        <td>
+          <div>
+              <i class="fa fa-graduation-cap"></i>
+              <input type="text" placeholder="nome da aula_" name="nome" />
+          </div>
+        </td>
+        <td>
+          <div>
+              <i class="fa fa-th-list"></i>
+              <select name="disciplina">
+                  <option value="1">Robótica</option>
+                  <option value="2">Laboratório</option>
+              </select>
+          </div>
+        </td>
+        <td>
+          <div>
+              <i class="fa fa-line-chart"></i>
+              <select name="nivel">
+                  <option value="1">alfa</option>
+                  <option value="2">beta</option>
+                  <option value="3">1°</option>
+                  <option value="4">2°</option>
+                  <option value="5">3°</option>
+              </select>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div>
+              <i class="fa fa-comment"></i>
+              <input type="text" placeholder="breve descrição_" name="descricao" />
+          </div>
+        </td>
+        <td>
+          <div class="file-input">
+            <i class="fa fa-file"></i>
+            <input onchange="fileChange()" type="file" name="documento" />
+            <span></span>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button type="submit"><i class="fa fa-paper-plane"></i> adicionar aula</button>
+
+    <div class="datagrid">
+        <table cellspacing="0" cellpadding="5">
+            <tr ng-repeat="X in lessons | orderBy: ['nome', 'disciplina', 'nivel']">
+                <td width="70%"><span>></span>{{X.nome}}</td>
+                <td width="10%">{{X.disciplina == '1' ? 'Robótica' : 'Laboratório'}}</td>
+                <td width="10%">{{X.nivel}}</td>
+                <td width="5%" ng-click="deleteLesson(X.id)">
+                    <i class="fa fa-trash"></i>
+                </td>
+                <td width="5%">
+                    <i class="fa fa-download"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</form>

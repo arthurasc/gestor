@@ -1,0 +1,34 @@
+<p>
+    GERENCIAMENTO DE USUÁRIOS_<span>&#10006;</span>
+</p>
+
+<form method="post" action="libs/methods/user-methods/insert-user.php">
+
+    <div>
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="nome de usuário_" name="nome" />
+    </div>
+
+    <div>
+        <i class="fa fa-signal"></i>
+        <select name="nivel">
+            <option value="1">alfa</option>
+            <option value="2">beta</option>
+        </select>
+    </div>
+
+    <button type="submit"><i class="fa fa-paper-plane"></i> adicionar usuário</button>
+
+    <div class="datagrid" ng-controller="user-controller">
+        <table cellspacing="0" cellpadding="5">
+            <tr ng-repeat="X in users | orderBy: ['nome', 'nivel']">
+                <td width="70%"><span>></span>{{X.nome}}</td>
+                <td width="20%">{{X.nivel == '1' ? 'administrador' : 'professor'}}</td>
+                <td width="10%" ng-click="deleteUser(X.id)">
+                    <i class="fa fa-trash"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</form>

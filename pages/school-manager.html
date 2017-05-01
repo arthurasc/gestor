@@ -1,0 +1,50 @@
+<style type="text/css">
+.view form .datagrid
+{
+    height: -webkit-calc(100% - 258px);
+    height: -moz-calc(100% - 258px);
+    height: calc(100% - 258px);
+}
+.view form .datagrid table tr td:nth-child(2n+0)
+{
+  text-align: left;
+}
+</style>
+
+<p>
+    GERENCIAMENTO DE ESCOLAS_<span>&#10006;</span>
+</p>
+
+<form method="post" action="libs/methods/school-methods/insert-school.php">
+
+    <div>
+        <i class="fa fa-graduation-cap"></i>
+        <input type="text" placeholder="nome da escola_" name="nome" />
+    </div>
+
+    <div>
+        <i class="fa fa-phone"></i>
+        <input type="text" placeholder="número para contato_" name="telefone" />
+    </div>
+
+    <div>
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="nome do responsável_" name="responsavel" />
+    </div>
+
+    <button type="submit"><i class="fa fa-paper-plane"></i> adicionar escola</button>
+
+    <div class="datagrid" ng-controller="school-controller">
+        <table cellspacing="0" cellpadding="5">
+            <tr ng-repeat="X in schools | orderBy: 'nome'">
+                <td width="70%"><span>></span>{{X.nome}}</td>
+                <td width="10%">{{X.responsavel}}</td>
+                <td width="10%">{{X.telefone}}</td>
+                <td width="10%" ng-click="deleteSchool(X.id)">
+                    <i class="fa fa-trash"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</form>

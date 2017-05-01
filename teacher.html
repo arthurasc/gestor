@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Robô-Ciência | Gestãos</title>
+    <link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+    <link href="css/main.css" type="text/css" rel="stylesheet" />
+    <link href="css/placeholderedit.css" type="text/css" rel="stylesheet" />
+</head>
+<body ng-app="app">
+
+    <div class="options-list">
+
+        <figure></figure>
+
+        <li><a href="#agenda">agenda_</a><span class="task">0</span></li>
+        <li><a href="#/">vistos_</a><span class="teacher-style">></span></li>
+        <li><a href="#turmas">turmas_</a><span class="teacher-style">></span></li>
+        
+    </div>
+
+    <ng-view class="view"></ng-view>
+
+</body>
+
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/angular.route.js"></script>
+    <script type="text/javascript" src="js/angular.animate.js"></script>
+    <script type="text/javascript" src="js/setts.js"></script>
+    <script type="text/javascript" src="js/app.config.js"></script>
+    <script type="text/javascript" src="js/teacher.controller.js"></script>
+
+</html>

@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+body, html
+{
+    margin: 0px;
+    height: 100%;
+    background: transparent url('../img/pattern.png') repeat top left;
+}
+
+.options-list
+{
+    height: 100%;
+    width: 200px;
+    background: #000;
+    float: left;
+}
+
+.options-list figure
+{
+    width: 100%;
+    height: 200px;
+    background: #111111;
+    margin: 0px;
+}
+
+.options-list li, .view p
+{
+    padding: 5px 10px;
+    font-family: 'VT323', monospace;
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.options-list li:hover, .options-list li:hover a, .options-list li:hover span
+{
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+    background: #111111;
+    color: #66cc33;
+    cursor: pointer;
+}
+
+.options-list li a
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.options-list li span
+{
+    display: block;
+    float: right;
+    color: #ffffff;
+}
+
+.options-list li .task
+{
+  background: DarkRed;
+  margin-top: -3px;
+  border-radius: 10px;
+  padding: 2px 7px;
+}
+
+.options-list li .teacher-style
+{
+  margin: 0px 7px;
+}
+
+.view
+{
+    width: -webkit-calc(100% - 400px);
+    width: -moz-calc(100% - 400px);
+    width: calc(100% - 400px);
+    height: 80%;
+    margin: 4% 100px;
+    background: #fff;
+    position: absolute;
+    padding: 10px;
+    box-shadow: 2px 2px 5px #000;
+}
+
+.view p
+{
+    text-align: center;
+    font-size: 24px;
+    margin: 10px 0px;
+    padding-bottom: 15px;
+}
+
+.view p span
+{
+    float: right;
+    position: relative;
+    margin-top: -2px;
+}
+
+.view form
+{
+    height: 100%;
+}
+
+.view form div
+{
+    margin: 10px 0px;
+}
+
+.view form div i
+{
+    height: 38px;
+    width: 38px;
+    background: #111111;
+    color: #ffffff;
+    display: block;
+    float: left;
+    font-size: 24px;
+    text-align: center;
+    line-height: 38px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.view form div input[type=text]
+{
+    padding: 10px 20px;
+    border: none;
+    border-bottom: 1px solid #111111;
+    width: -webkit-calc(100% - 78px);
+    width: -moz-calc(100% - 78px);
+    width: calc(100% - 78px);
+}
+
+.view form .file-input
+{
+  margin-top: 10px;
+}
+
+.view form .file-input i
+{
+  width: 80px;
+}
+
+.view form .file-input span
+{
+  display: block;
+  height: 38px;
+  width: -webkit-calc(100% - 82px);
+  width: -moz-calc(100% - 82px);
+  width: calc(100% - 82px);
+}
+
+.view form .file-input input[type=file]
+{
+  position: absolute;
+  margin-left: -80px;
+  width: 80px;
+  height: 38px;
+  opacity: 0;
+}
+
+.view form div select
+{
+    padding: 9px 20px;
+    border: none;
+    border-bottom: 1px solid #111111;
+    width: -webkit-calc(100% - 38px);
+    width: -moz-calc(100% - 38px);
+    width: calc(100% - 38px);
+}
+
+.view form button
+{
+    color: #fff;
+    background: #111111;
+    line-height: 38px;
+    font-family: 'VT323', monospace;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 5px;
+    float: right;
+}
+
+.view form .datagrid
+{
+    height: -webkit-calc(100% - 208px);
+    height: -moz-calc(100% - 208px);
+    height: calc(100% - 208px);
+    width: 100%;
+    position: relative;
+    margin-top: 58px;
+    border: 1px solid #000;
+    overflow-y: auto;
+}
+
+.view form .datagrid table
+{
+    width: 100%;
+}
+
+.view form .datagrid table tr span
+{
+    font-family: 'VT323', monospace;
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+
+.view form .datagrid table tr td:nth-child(2n+0), .view form .datagrid table tr td:nth-child(3n+0)
+{
+    text-align: center;
+}
+
+.view form .datagrid table tr td i
+{
+    line-height: 38px;
+    padding: -5px;
+    border-radius: 5px;
+    float: none;
+}
+
+.view form .datagrid table tr:nth-child(2n+0)
+{
+    background: #ccc;
+}
+
+.view.ng-enter
+{
+  transition: 1s all;
+  opacity:0;
+}
+
+.view.ng-enter.ng-enter-active
+{
+  opacity:1;
+}

@@ -1,0 +1,111 @@
+<style type="text/css">
+.view form table
+{
+  width: 100%;
+}
+.view form .datagrid
+{
+    height: -webkit-calc(100% - 258px);
+    height: -moz-calc(100% - 258px);
+    height: calc(100% - 258px);
+}
+</style>
+
+<p>
+    GERENCIAMENTO DE TURMA_<span>&#10006;</span>
+</p>
+
+<form method="post" action="libs/methods/class-methods/insert-class.php" ng-controller="class-controller">
+    <table>
+      <tr>
+        <td>
+          <div>
+              <i class="fa fa-graduation-cap"></i>
+              <select name="escola">
+                  <option ng-repeat="X in schools | orderBy: 'nome'" value="{{X.id}}">{{X.nome}}</option>
+              </select>
+          </div>
+        </td>
+        <td>
+          <div>
+              <i class="fa fa-user"></i>
+              <select name="usuario">
+                  <option ng-repeat="X in users | filter: {nivel: '2'} | orderBy: 'nome'" value="{{X.id}}">{{X.nome}}</option>
+              </select>
+          </div>
+        </td>
+        <td>
+          <div>
+              <i class="fa fa-clock-o"></i>
+              <select name="horario">
+                  <option value="700">07:00</option>
+                  <option value="730">07:30</option>
+                  <option value="800">08:00</option>
+                  <option value="830">08:30</option>
+                  <option value="900">09:00</option>
+                  <option value="930">09:30</option>
+                  <option value="1000">10:00</option>
+                  <option value="1030">10:30</option>
+                  <option value="1100">11:00</option>
+                  <option value="1130">11:30</option>
+                  <option value="1200">12:00</option>
+                  <option value="1230">12:30</option>
+                  <option value="1300">13:00</option>
+                  <option value="1330">13:30</option>
+                  <option value="1400">14:00</option>
+                  <option value="1430">14:30</option>
+                  <option value="1500">15:00</option>
+                  <option value="1530">15:30</option>
+                  <option value="1600">16:00</option>
+                  <option value="1630">16:30</option>
+                  <option value="1700">17:00</option>
+                  <option value="1730">17:30</option>
+                  <option value="1800">18:00</option>
+              </select>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div>
+              <i class="fa fa-calendar-check-o"></i>
+              <select name="dia">
+                  <option value="1">Segunda</option>
+                  <option value="2">Terça</option>
+                  <option value="3">Quarta</option>
+                  <option value="4">Quinta</option>
+                  <option value="5">Sexta</option>
+                  <option value="6">Sábado</option>
+              </select>
+          </div>
+        </td>
+        <td>
+          <div>
+              <i class="fa fa-th-list"></i>
+              <select name="disciplina">
+                  <option value="1">Robótica</option>
+                  <option value="2">Laboratório</option>
+              </select>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <button type="submit"><i class="fa fa-paper-plane"></i> adicionar turma</button>
+
+    <div class="datagrid">
+        <table cellspacing="0" cellpadding="5">
+            <tr ng-repeat="X in class | orderBy: ['escola','horario','dia']">
+                <td width="50%"><span>></span>{{X.escola}}</td>
+                <td width="10%">{{X.horario}}</td>
+                <td width="10%">{{X.dia}}</td>
+                <td width="10%">{{X.disciplina == '1' ? 'Robótica' : 'Laboratório'}}</td>
+                <td width="10%">{{X.usuario}}</td>
+                <td width="10%" ng-click="deleteClass(X.id)">
+                    <i class="fa fa-trash"></i>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</form>
